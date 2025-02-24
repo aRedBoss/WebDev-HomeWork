@@ -14,18 +14,21 @@ async function hashPassword() {
         console.log('Password:', password);
         console.log('Salt:', salt);
         console.log('Hashed Password:', hashedPassword);
+
+        return hashedPassword
     } catch (error) {
         console.error('Error:', error);
+        return 'Failed to hash password'
     }
 }
 
+
 // Call the function to hash the password
-hashPassword();
 
 // Function to compare a password with a hash
 async function comparePassword() {
     const inputPassword = 'mySecurePassword'; // Replace with the password you want to compare
-    const hashedPassword = 'yourStoredHashedPassword'; // Replace with the hashed password stored in your application
+    const hashedPassword = await hashPassword(); // Replace with the hashed password stored in your application
 
     try {
         // Compare the input password with the stored hashed password
