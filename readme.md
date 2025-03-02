@@ -14,19 +14,36 @@ This guide will help you set up a new MERN (MongoDB, Express, React, Node.js) ap
 
 1. Open terminal and navigate to the backend directory.
 
-2. Run the following command to create a `package.json` file: *npm init -y*.
+2. Run the following command to create a `package.json` file:
 
-3. Install **Express** and **Dotenv** by running the following command: *npm install express dotenv*.
+```bash
+npm init -y
+```
 
-4. Install **nodemon** as a dev dependencie by running the following command: *npm i nodemon -D*.
+3. Install **Express** and **Dotenv** by running the following command:
+
+```bash
+npm install express dotenv
+```
+
+4. Install **nodemon** as a dev dependency by running the following command:
+
+```bash
+npm i nodemon -D
+```
 
 5. Install **Postman** for testing.
 
-6. **MVC** structure: app.js, config/db.js, models/model.js, controllers/controller.js, routes/router.js. 
+6. **MVC** structure: create the following files:
+   - `app.js`
+   - `config/db.js`
+   - `models/model.js`
+   - `controllers/controller.js`
+   - `routes/router.js`
 
-7. Connect to MongoDB using mongoose (config/db.js). Example:
-``` javascript
+7. Connect to MongoDB using mongoose (`config/db.js`). Example:
 
+```javascript
 const mongoose = require('mongoose');
 
 const connectDB = async () => {
@@ -39,11 +56,11 @@ const connectDB = async () => {
 }
 
 module.exports = connectDB;
-
 ```
-8. Make a model Schema (models/model.js). Example:
-``` javascript
 
+8. Make a model Schema (`models/model.js`). Example:
+
+```javascript
 const mongoose = require('mongoose');
 
 // Define a basic schema for an Item
@@ -64,10 +81,46 @@ const itemSchema = new mongoose.Schema({
 
 // Create and export the model based on the schema
 module.exports = mongoose.model('Item', itemSchema);
-
-
 ```
-9. Continue with the **controllers GET, POST, DELETE, PATCH** (Import the model here to work with) logic 
-and then make the **routes GET, POST, DELETE, PATCH** (Import the controller here to work with).
 
-10. Test with ***Postman*** to make sure that the back end is functional.
+9. Continue with the **controllers** (GET, POST, DELETE, PATCH) logic by importing the model, then set up **routes** (GET, POST, DELETE, PATCH) by importing the controllers.
+
+10. Test with **Postman** to make sure that the backend is functional.
+
+---
+
+## **2. Frontend Setup**
+
+### **Step-by-Step Setup with Vite:**
+
+1. **Create a new Vite React app:**
+
+```bash
+npm create vite@latest frontend
+```
+
+2. **Choose options:**
+   - **Project name:** `frontend`
+   - **Framework:** `React`
+   - **Variant:** `JavaScript`
+
+3. **Navigate into your frontend directory:**
+
+```bash
+cd frontend
+```
+
+4. **Install dependencies:**
+
+```bash
+npm install
+```
+
+5. **Run the development server:**
+
+```bash
+npm run dev
+```
+
+Now you have both the backend and frontend set up for your MERN app! 🚀
+
