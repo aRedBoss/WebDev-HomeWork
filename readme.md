@@ -1,5 +1,3 @@
-# WebDev-HomeWork
-
 # MERN App Setup Guide
 
 This guide will help you set up a new MERN (MongoDB, Express, React, Node.js) app from scratch. It includes all the necessary steps to get the backend and frontend running.
